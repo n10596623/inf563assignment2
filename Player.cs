@@ -38,12 +38,12 @@ public static void CreateNewPlayer()
 }
 
 }
-class Computerplayer : Player
+ class Computerplayer : Player
 {
 
 
 }
-class Humanplayer : Player
+ class Humanplayer : Player
 {
 
 
