@@ -28,14 +28,7 @@ public Player(string playerName, string playerType)
     PlayerType = playerType;
 }
 
-public static void DeletePlayer()
-{
-    
-}
-public static void CreateNewPlayer()
-{
-    
-}
+
 
 }
  class Computerplayer : Player

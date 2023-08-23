@@ -7,5 +7,13 @@ class program
     {
         
     }
+    public static void DeletePlayer()
+    {
+    
+    }
+    public static void CreateNewPlayer()
+    {
+    
+    }
     
 }
