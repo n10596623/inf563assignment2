@@ -1,0 +1,15 @@
+C:\QUT MASTER I.T\mit tri2\ifn563 object\bin\Debug\net6.0\ifn563 object.exe
+C:\QUT MASTER I.T\mit tri2\ifn563 object\bin\Debug\net6.0\ifn563 object.deps.json
+C:\QUT MASTER I.T\mit tri2\ifn563 object\bin\Debug\net6.0\ifn563 object.runtimeconfig.json
+C:\QUT MASTER I.T\mit tri2\ifn563 object\bin\Debug\net6.0\ifn563 object.dll
+C:\QUT MASTER I.T\mit tri2\ifn563 object\bin\Debug\net6.0\ifn563 object.pdb
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.csproj.AssemblyReference.cache
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.GeneratedMSBuildEditorConfig.editorconfig
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.AssemblyInfoInputs.cache
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.AssemblyInfo.cs
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.csproj.CoreCompileInputs.cache
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.dll
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\refint\ifn563 object.dll
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.pdb
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ifn563 object.genruntimeconfig.cache
+C:\QUT MASTER I.T\mit tri2\ifn563 object\obj\Debug\net6.0\ref\ifn563 object.dll
