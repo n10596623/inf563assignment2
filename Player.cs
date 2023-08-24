@@ -44,7 +44,6 @@ public virtual int playMove()
 {
     //data fields
     private string computerPlayerName = "Computer";
-    private int computerplayerMove;
     //properties
     public string ComputerPlayerName
     {
@@ -52,7 +51,7 @@ public virtual int playMove()
     }
     public int ComputerPlayerMove
     {
-    get{return computerplayerMove;}
+     get;set;
     }
     //methods
     public override int playMove()
@@ -63,7 +62,7 @@ public virtual int playMove()
     public int SelectValidMove()
     {
         //we can discuss how the computer will find out which move is valid
-       return computerplayerMove;
+       return ComputerPlayerMove;
     }
 
 }
