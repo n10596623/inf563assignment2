@@ -21,7 +21,7 @@ public string PlayerType
 }
 
 //constructors 
-//i am daniel
+
 public Player(){}
 public Player(string playerName, string playerType)
 {
