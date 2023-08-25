@@ -54,10 +54,10 @@ public virtual int playMove()
      get;set;
     }
     //methods
-    public override int playMove()
+    /*public override int playMove()
     {  
       return ComputerPlayerMove;
-    }
+    }*/
      //method that selects valid move for computer to play
     public int SelectValidMove()
     {
@@ -82,9 +82,10 @@ public virtual int playMove()
     get; set;
     }
     //methods
-    public override int playMove()
+
+    /* public override int playMove()
     {
     return HumanPlayerMove;
-    }
+    }*/
 
 }

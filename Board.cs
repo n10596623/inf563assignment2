@@ -5,7 +5,8 @@ class Board
 private string boardName;
 private int rows;
 private int colums;
-private string symbols;
+private string rowsymbols;
+private string colsymbols;
 
 //propoties
 public int Rows 
@@ -17,7 +18,11 @@ public int Colums
     get;set;
     
 }
-public string Symbols 
+public string RowSymbols 
+{
+    get;set;
+}
+public string ColSymbols 
 {
     get;set;
 }
@@ -27,22 +32,24 @@ public string BoardName
 }
 // constructure
 public Board(){}
-public Board(string boardName,int rows,int colums, string symbols)
+public Board(string boardName,int rows,int colums, string rowsymbols,string colsymbols)
 {
     boardName = BoardName;
     rows = Rows;
     colums = Colums;
-    symbols = Symbols;
+    rowsymbols = RowSymbols;
+    colsymbols = ColSymbols;
 
 } 
 //method
 public static void draw()
 {
-        Board sos = new Board{BoardName="SOS",Rows=3,Colums=3,Symbols="-"};
-        Board connectfour = new Board{BoardName="ConnectFour",Rows=7,Colums=4,Symbols="-"};
+        Board sos = new Board{BoardName="SOS",Rows=3,Colums=3,RowSymbols="-",ColSymbols="|"};
+        Board connectfour = new Board{BoardName="ConnectFour",Rows=7,Colums=4,RowSymbols="-",ColSymbols="|"};
         for (int i=0;i<sos.Rows;i++)
         {
-            Console.WriteLine(sos.Symbols);
+            Console.WriteLine(sos.rowsymbols);
+            Console.WriteLine(sos.ColSymbols);
         }
 }
 }

@@ -4,25 +4,29 @@ using System.Runtime.CompilerServices;
 class game
 {
     //data field 
-
+private string gameType;
     //propoties 
-
+public string GameType
+{
+    get;set;
+}
     //constructure 
-
+public game(){}
+public game(string gameType){}
     //method 
-static void CreateNewGame()
+public static void CreateNewGame()
 {
 string GameMode;
 Console.WriteLine("Input game name: ");
 GameMode = Console.ReadLine();
-while(GameMode != "SOS" || GameMode != "ConnectFour")
+while(GameMode != "SOS" && GameMode != "ConnectFour")
 {
 Console.WriteLine("Input game name: ");
 GameMode = Console.ReadLine();
 }
 
 }
-static void RetriveGameDetails()
+public static void RetriveGameDetails()
 {
 
 }

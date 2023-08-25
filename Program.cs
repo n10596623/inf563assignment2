@@ -5,7 +5,7 @@ class program
 {
         static void Main(string[] args)
     {
-        
+        game.CreateNewGame();
     }
     public static void DeletePlayer()
     {
