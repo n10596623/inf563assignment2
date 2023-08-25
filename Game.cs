@@ -36,6 +36,7 @@ public static void DeletePlayer()
 }
 public static void CreateNewPlayer()
 {
+    //decision will be made by user before creating appropriate player objects
 Computerplayer computer1 = new Computerplayer{PlayerName="computer1",PlayerType="C"};
 Humanplayer Human1 = new Humanplayer{PlayerName="Human",PlayerType="H"};
 }
