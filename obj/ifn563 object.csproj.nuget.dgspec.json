@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\QUT MASTER I.T\\mit tri2\\ifn563 object\\ifn563 object.csproj": {}
+    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj": {}
   },
   "projects": {
-    "C:\\QUT MASTER I.T\\mit tri2\\ifn563 object\\ifn563 object.csproj": {
+    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\QUT MASTER I.T\\mit tri2\\ifn563 object\\ifn563 object.csproj",
+        "projectUniqueName": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj",
         "projectName": "ifn563 object",
-        "projectPath": "C:\\QUT MASTER I.T\\mit tri2\\ifn563 object\\ifn563 object.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\QUT MASTER I.T\\mit tri2\\ifn563 object\\obj\\",
+        "projectPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj",
+        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
