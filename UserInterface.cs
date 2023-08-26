@@ -12,4 +12,10 @@ public class UserInterface
         Console.WriteLine("Enter 1 for SOS Game. Enter 2 for Connect Four Game.");
 
     }
+
+    public static void DecideGameMode()
+    {
+        Console.WriteLine("Enter 1 for Human Vs Human. Enter 2 for Computer VS Human.");
+
+    }
 }
