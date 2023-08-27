@@ -1,31 +1,16 @@
 using Microsoft.VisualBasic.FileIO;
 
-class Player
+abstract class Player
 {
 //data field 
-
-
-
 //properties
-
-
 //constructors 
 
-
-
-// We can edit this tomorrow
-/*public int Move
-{
-    set;get;
-}
-//methods
-public virtual int playMove()
-{
-    return Move;
-}*/
+//abstract method to be inherited
+public abstract int playMove();
 
 }
- class Computerplayer : Player
+ class ComputerPlayer : Player
 {
     //data fields
     private string computerPlayerName = "Computer";
@@ -39,10 +24,10 @@ public virtual int playMove()
      get;set;
     }
     //methods
-    /*public override int playMove()
+    public override int playMove()
     {  
       return ComputerPlayerMove;
-    }*/
+    }
      //method that selects valid move for computer to play
     public int SelectValidMove()
     {
@@ -51,7 +36,7 @@ public virtual int playMove()
     }
 
 }
- class Humanplayer : Player
+ class HumanPlayer : Player
 {
     //data fields
     private string HumanplayerName;
@@ -68,9 +53,10 @@ public virtual int playMove()
     }
     //methods
 
-    /* public override int playMove()
+    //overirde parent class method.
+     public override int playMove()
     {
     return HumanPlayerMove;
-    }*/
+    }
 
 }

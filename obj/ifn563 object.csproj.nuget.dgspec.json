@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj": {}
+    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj": {}
   },
   "projects": {
-    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj": {
+    "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj",
+        "projectUniqueName": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
         "projectName": "ifn563 object",
-        "projectPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\ifn563 object.csproj",
+        "projectPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
         "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2-1\\obj\\",
+        "outputPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",

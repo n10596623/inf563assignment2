@@ -46,7 +46,21 @@ public static void DeletePlayer()
 {
     
 }
-public static void CreateNewPlayer(int c, out Player firstPlayer, out Player secondPlayer)
+public static void CreateHumanPlayer(out HumanPlayer humanPlayer)
+{
+
+    humanPlayer = new HumanPlayer();
+
+}
+public static void CreateComputerPlayer(out ComputerPlayer computerPlayer)
+{
+
+    computerPlayer = new ComputerPlayer();
+
+}
+
+//Method that outputs    
+public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
 {
     
     if(c == 1)
@@ -55,18 +69,18 @@ public static void CreateNewPlayer(int c, out Player firstPlayer, out Player sec
         //when Human Vs Human is selected we should initialize 2 HumanPlayer objects
         
          
-        Console.WriteLine("Human Vs Human was selected");
-        firstPlayer = new Humanplayer();
-        secondPlayer = new Humanplayer();
+        Console.WriteLine("Computer Vs Human was selected");
+        CreateHumanPlayer(out HumanPlayer firstPlayer);
+        secondPlayer = new HumanPlayer();
         
     }else
     {
         //when Computer Vs Human is selected we should initialize 1 HumanPlayer object and 1 ComputerPlayer object
         
        
-        Console.WriteLine("Computer Vs Human was select");
-        firstPlayer = new Humanplayer();;
-        secondPlayer = new Computerplayer();;
+        Console.WriteLine("Human Vs Human was select");
+        firstPlayer = new HumanPlayer();
+        secondPlayer = new ComputerPlayer();
     }
     //decision will be made by user before creating appropriate player objects
 

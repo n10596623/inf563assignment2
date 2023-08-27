@@ -13,11 +13,15 @@ class program
         UserInterface.DecideGameMode();
         int b = int.Parse(Console.ReadLine());
 
-        
-        Game.CreateNewPlayer(b, out  Player firstPlayer, out  Player secondPlayer);
-         //string v = ((Computerplayer)secondPlayer).ComputerPlayerName;
+        HumanPlayer firstPlayer;
+
+         Game.CreateHumanPlayer(out firstPlayer);   
+        //Game.CreateNewPlayer(b, out  HumanPlayer firstPlayer, out  Player secondPlayer);
+        //Console.WriteLine(secondPlayer.ComputerPlayerName);
+         //string v = ((Computerlayer)secondPlayer).ComputerPlayerName;
          //Console.WriteLine(v);
 
+        
 
     
         
@@ -25,6 +29,9 @@ class program
         //Board.draw(sos);
         
     }
+
+    //method to handle type casting of the different player subclass objects
+    //public static void PlayerObjectCast() 
     
     
 }
