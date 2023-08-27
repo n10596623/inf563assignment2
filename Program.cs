@@ -5,23 +5,25 @@ class program
 {
         public static void Main(string[] args)
     {
-
         UserInterface.DisplayWelcomeMessage();
         UserInterface.DecideGameToPlay();
         int a = int.Parse(Console.ReadLine());
         Game.SelectGame(a);
         UserInterface.DecideGameMode();
         int b = int.Parse(Console.ReadLine());
-
-        HumanPlayer firstPlayer;
-
-         Game.CreateHumanPlayer(out firstPlayer);   
-        //Game.CreateNewPlayer(b, out  HumanPlayer firstPlayer, out  Player secondPlayer);
-        //Console.WriteLine(secondPlayer.ComputerPlayerName);
-         //string v = ((Computerlayer)secondPlayer).ComputerPlayerName;
-         //Console.WriteLine(v);
+        if (b==1)
+        {
+            Game.CreateHumanPlayer();
+        }else{
+            Game.CreateComputerPlayer(out Computerplayer computer);
+            Console.WriteLine(computer.ComputerPlayerName);
+        }
 
         
+        Game.CreateNewPlayer(b, out  Player firstPlayer, out  Player secondPlayer);
+         //string v = ((Computerplayer)secondPlayer).ComputerPlayerName;
+         //Console.WriteLine(v);
+
 
     
         
