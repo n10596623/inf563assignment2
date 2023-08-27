@@ -15,7 +15,29 @@ public class UserInterface
 
     public static void DecideGameMode()
     {
-        Console.WriteLine("Enter 1 for Human Vs Human. Enter 2 for Computer VS Human.");
+        Console.WriteLine("Enter 1 for Human . Enter 2 for Computer .");
 
+    }
+    public static void SOSUserGuild()
+    {
+        Console.WriteLine("****************************");
+        Console.WriteLine("SOS is the 3x3 board game. ");
+        Console.WriteLine(" 'R' is redo, 'U' is Undo ");
+        Console.WriteLine("enter the number as 1 3 which means raw 1 and colume 3");
+        Console.WriteLine("****************************");
+
+    }
+    public static void ConnectFourUserGuild()
+    {
+        Console.WriteLine("****************************");
+        Console.WriteLine("ConnectFour is the 7x4 game.");
+        Console.WriteLine("'R' is redo, 'U' is undo");
+        Console.WriteLine("enter the number as 1 3 which means raw 1 and colume 3");
+        Console.WriteLine("****************************");
+    }
+    public static void Displayplayer1()
+    {
+        Console.WriteLine("enter first player type:");
+        
     }
 }

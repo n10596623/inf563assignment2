@@ -46,6 +46,16 @@ public static void DeletePlayer()
 {
     
 }
+public static void CreateHumanPlayer()
+{
+ Humanplayer humanplayer = new Humanplayer();
+ Console.WriteLine(humanplayer);
+}
+public static void CreateComputerPlayer(out Computerplayer computer)
+{
+ computer = new Computerplayer();
+ Console.WriteLine(computer);
+}
 public static void CreateNewPlayer(int c, out Player firstPlayer, out Player secondPlayer)
 {
     
