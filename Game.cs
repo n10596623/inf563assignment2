@@ -46,7 +46,6 @@ public static void DeletePlayer()
 {
     
 }
-<<<<<<< HEAD
 public static void CreateHumanPlayer(out HumanPlayer humanPlayer)
 {
 
@@ -62,19 +61,6 @@ public static void CreateComputerPlayer(out ComputerPlayer computerPlayer)
 
 //Method that outputs    
 public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
-=======
-public static void CreateHumanPlayer()
-{
- Humanplayer humanplayer = new Humanplayer();
- Console.WriteLine(humanplayer);
-}
-public static void CreateComputerPlayer(out Computerplayer computer)
-{
- computer = new Computerplayer();
- Console.WriteLine(computer);
-}
-public static void CreateNewPlayer(int c, out Player firstPlayer, out Player secondPlayer)
->>>>>>> 3542fd2228cc8cda39ffb62e258fb54593b70b64
 {
     
     if(c == 1)
@@ -84,7 +70,7 @@ public static void CreateNewPlayer(int c, out Player firstPlayer, out Player sec
         
          
         Console.WriteLine("Computer Vs Human was selected");
-        CreateHumanPlayer(out HumanPlayer firstPlayer);
+        CreateHumanPlayer(out firstPlayer);
         secondPlayer = new HumanPlayer();
         
     }else
