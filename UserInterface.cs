@@ -15,11 +15,7 @@ public class UserInterface
 
     public static void DecideGameMode()
     {
-<<<<<<< HEAD
         Console.WriteLine(" Enter 1 for Computer VS Human. Enter 2 for Human Vs Human.");
-=======
-        Console.WriteLine("Enter 1 for Human . Enter 2 for Computer .");
->>>>>>> 3542fd2228cc8cda39ffb62e258fb54593b70b64
 
     }
     public static void SOSUserGuild()
