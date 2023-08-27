@@ -71,7 +71,7 @@ public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out 
          
         Console.WriteLine("Computer Vs Human was selected");
         CreateHumanPlayer(out firstPlayer);
-        secondPlayer = new HumanPlayer();
+        CreateHumanPlayer(out secondPlayer);
         
     }else
     {
