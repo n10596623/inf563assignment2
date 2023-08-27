@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ifn563_object
-<<<<<<< HEAD
-build_property.ProjectDir = c:\Users\David\OneDrive - Queensland University of Technology\IFN563\Group Code\inf563assignment2\
-=======
 build_property.ProjectDir = c:\QUT MASTER I.T\mit tri2\ifn563-2\inf563assignment2\
->>>>>>> 3542fd2228cc8cda39ffb62e258fb54593b70b64
