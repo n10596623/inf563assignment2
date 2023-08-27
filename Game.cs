@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 class Game
 {
-    //data field ////
+    //data field
 private string gameType;
     //propoties 
 public string GameType
