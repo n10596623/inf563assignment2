@@ -32,6 +32,9 @@ public abstract int playMove();
     public int SelectValidMove()
     {
         //we can discuss how the computer will find out which move is valid
+       Random rnd = new Random();
+       //max int will be decided later in Next() 
+       ComputerPlayerMove = rnd.Next();
        return ComputerPlayerMove;
     }
 
