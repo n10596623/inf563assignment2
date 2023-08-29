@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\David\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
+      "projectUniqueName": "C:\\QUT MASTER I.T\\mit tri2\\ifn563-2\\inf563assignment2\\ifn563 object.csproj",
       "projectName": "ifn563 object",
-      "projectPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
-      "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\obj\\",
+      "projectPath": "C:\\QUT MASTER I.T\\mit tri2\\ifn563-2\\inf563assignment2\\ifn563 object.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\QUT MASTER I.T\\mit tri2\\ifn563-2\\inf563assignment2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

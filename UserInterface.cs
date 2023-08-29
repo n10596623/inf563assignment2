@@ -15,7 +15,7 @@ public class UserInterface
 
     public static void DecideGameMode()
     {
-        Console.WriteLine(" Enter 1 for Computer VS Human. Enter 2 for Human Vs Human.");
+        //Console.WriteLine("Enter 1 for Computer VS Human. Enter 2 for Human Vs Human.");
         Console.WriteLine("Enter 1 for Human . Enter 2 for Computer .");
 
     }
@@ -39,6 +39,21 @@ public class UserInterface
     public static void Displayplayer1()
     {
         Console.WriteLine("enter first player type:");
+        
+    }
+    public static void Player1Name()
+    {
+        Console.WriteLine("enter first player Name:");
+        
+    }
+        public static void Player2Name()
+    {
+        Console.WriteLine("enter second player Name:");
+        
+    }
+    public static void Displayplayer2()
+    {
+        Console.WriteLine("enter second player type:");
         
     }
 }

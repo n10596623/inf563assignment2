@@ -21,6 +21,7 @@ public static void SelectGame(int b)
     if(b == 1)
     {
         Console.WriteLine("SOS was selected");
+
     }else
     {
         Console.WriteLine("Connect Four was select");
@@ -46,21 +47,38 @@ public static void DeletePlayer()
 {
     
 }
-public static void CreateHumanPlayer(out HumanPlayer humanPlayer)
+public static void CreateHumanPlayer1(out HumanPlayer humanPlayer1)
 {
 
-    humanPlayer = new HumanPlayer();
+    humanPlayer1 = new HumanPlayer();
+
+    
+    
 
 }
-public static void CreateComputerPlayer(out ComputerPlayer computerPlayer)
+public static void CreateHumanPlayer2(out HumanPlayer humanPlayer2)
 {
 
-    computerPlayer = new ComputerPlayer();
+    humanPlayer2 = new HumanPlayer();
+    
+    
+
+}
+public static void CreateComputerPlayer1(out ComputerPlayer computer1)
+{
+
+    computer1 = new ComputerPlayer();
+
+}
+public static void CreateComputerPlayer2(out ComputerPlayer computer2)
+{
+
+    computer2 = new ComputerPlayer();
 
 }
 
 //Method that outputs    
-public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
+/*public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
 {
     
     if(c == 1)
@@ -71,9 +89,11 @@ public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out 
          
         Console.WriteLine("Computer Vs Human was selected");
         CreateHumanPlayer(out firstPlayer);
+        
         secondPlayer = new HumanPlayer();
         
-    }else
+    }
+    else 
     {
         //when Computer Vs Human is selected we should initialize 1 HumanPlayer object and 1 ComputerPlayer object
         
@@ -85,6 +105,40 @@ public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out 
     //decision will be made by user before creating appropriate player objects
 
     
+}*/
+public static void drawSoS(char[] sosboard)
+{
+ 
+ 
+ Console.WriteLine("        |         |        ");
+ Console.WriteLine($"  {sosboard[0]}     |   {sosboard[1]}     |   {sosboard[2]}  ");
+ Console.WriteLine("--------|---------|--------");
+ Console.WriteLine("        |         |        ");
+ Console.WriteLine($"  {sosboard[3]}     |   {sosboard[4]}     |   {sosboard[5]}  ");
+ Console.WriteLine("--------|---------|--------");
+ Console.WriteLine("        |         |        ");
+ Console.WriteLine($"  {sosboard[6]}     |   {sosboard[7]}     |   {sosboard[8]}  ");
+ Console.WriteLine("        |         |        ");
+
+//This is just the example for the board will be 
+}
+public static void drawConnectFour(int[] connectFourBoard)
+{
+ 
+ 
+ Console.WriteLine("        |         |        |         |        |         |        ");
+ Console.WriteLine($"  {connectFourBoard[0]}     |   {connectFourBoard[1]}     |   {connectFourBoard[2]}    |   {connectFourBoard[3]}     |   {connectFourBoard[4]}    |   {connectFourBoard[5]}     |   {connectFourBoard[6]}  ");
+ Console.WriteLine("--------|---------|--------|---------|--------|---------|--------");
+ Console.WriteLine("        |         |        |         |        |         |        "); 
+ Console.WriteLine($"  {connectFourBoard[7]}     |   {connectFourBoard[8]}     |   {connectFourBoard[9]}   |   {connectFourBoard[10]}    |   {connectFourBoard[11]}   |   {connectFourBoard[12]}    |   {connectFourBoard[13]}  ");
+ Console.WriteLine("--------|---------|--------|---------|--------|---------|--------");
+ Console.WriteLine("        |         |        |         |        |         |        ");
+ Console.WriteLine($"  {connectFourBoard[14]}    |   {connectFourBoard[15]}    |   {connectFourBoard[16]}   |   {connectFourBoard[17]}    |   {connectFourBoard[18]}   |   {connectFourBoard[19]}    |   {connectFourBoard[20]}  ");
+ Console.WriteLine("--------|---------|--------|---------|--------|---------|--------");
+ Console.WriteLine("        |         |        |         |        |         |        ");
+ Console.WriteLine($"  {connectFourBoard[21]}    |   {connectFourBoard[22]}    |   {connectFourBoard[23]}   |   {connectFourBoard[24]}    |   {connectFourBoard[25]}   |   {connectFourBoard[26]}    |   {connectFourBoard[27]}  ");
+ Console.WriteLine("        |         |        |         |        |         |        ");
+//This is just the example for the board will be 
 }
 static void IsMoveValid()
 {

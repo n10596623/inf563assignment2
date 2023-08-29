@@ -1,7 +1,10 @@
 
+using System.Security.Cryptography;
+
 class Board
 {
-//data field 
+    
+/*//data field 
 private string boardName;
 private int rows;
 private int colums;
@@ -30,6 +33,7 @@ public string BoardName
 {
     get;set;
 }
+
 // constructure
 public Board(){}
 public Board(string boardName,int rows,int colums, string rowsymbols,string colsymbols)
@@ -39,31 +43,21 @@ public Board(string boardName,int rows,int colums, string rowsymbols,string cols
     colums = Colums;
     rowsymbols = RowSymbols;
     colsymbols = ColSymbols;
+    
 
-} 
+} */ 
+
 //method
 // fOR REVIEW LATER!!!!!!!!
-//Place drawRow and drawColumn in the game class
-/*public static void draw(Board sos)
-{
-        
-        
-        for(int k=0;k<sos.rows;k++){
-                Board.drawRow(sos);
-        }
 
-}
-public static void drawRow(Board sos){
-    
-    for (int i=0;i<sos.Rows;i++)
-        {
-            Console.Write(sos.ColSymbols);
-            
-           for (int j=0;j<sos.Colums;j++)
-           {
-            
-            Console.Write(sos.RowSymbols);
-           }
-        }
-}*/
+//Place drawRow and drawColumn in the game class
+    public static void SOSBoardArray(out char[] SosBoard)
+    {
+        SosBoard = new char[] {'1','2','3','4','5','6','7','8','9'};
+    }
+        public static void ConnectFourBoardArray(out int[] ConnectFourBoard)
+    {
+        ConnectFourBoard = new int[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28};
+    }
+
 }
