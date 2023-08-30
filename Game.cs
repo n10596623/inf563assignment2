@@ -51,6 +51,8 @@ public static void CreateHumanPlayer1(out HumanPlayer humanPlayer1)
 {
 
     humanPlayer1 = new HumanPlayer();
+    UserInterface.Player1Name();
+    humanPlayer1.HumanPlayerName=Console.ReadLine();
 
     
     
@@ -60,6 +62,8 @@ public static void CreateHumanPlayer2(out HumanPlayer humanPlayer2)
 {
 
     humanPlayer2 = new HumanPlayer();
+    UserInterface.Player2Name();
+    humanPlayer2.HumanPlayerName=Console.ReadLine();
     
     
 
@@ -106,7 +110,7 @@ public static void CreateComputerPlayer2(out ComputerPlayer computer2)
 
     
 }*/
-public static void drawSoS(char[] sosboard)
+public static void drawSoS(int[] sosboard)
 {
  
  
@@ -160,7 +164,11 @@ static void RedoMove()
 {
 
 }
-static void Play()
+public static void PlaySOS()
+{
+
+}
+public static void PlayConnectFour()
 {
 
 }
