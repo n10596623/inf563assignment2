@@ -1,69 +1,127 @@
 
 class Board
 {
-//data field 
-private string boardName;
-private int rows;
-private int colums;
-private string rowsymbols;
-private string colsymbols;
-
-//propoties
-public int Rows 
+//data field
+//properties
+public int NumberOfRows
 {
     get;set;
 }
-public int Colums 
-{
-    get;set;
-    
-}
-public string RowSymbols 
+public int NumberOfColmuns
 {
     get;set;
 }
-public string ColSymbols 
+//constructor
+public Board(int aNumberOfRows, int aNumberOfColumns)
 {
-    get;set;
+    NumberOfColmuns = aNumberOfColumns;
+    NumberOfRows = aNumberOfRows;
 }
-public string BoardName
-{
-    get;set;
-}
-// constructure
-public Board(){}
-public Board(string boardName,int rows,int colums, string rowsymbols,string colsymbols)
-{
-    boardName = BoardName;
-    rows = Rows;
-    colums = Colums;
-    rowsymbols = RowSymbols;
-    colsymbols = ColSymbols;
-
-} 
 //method
-// fOR REVIEW LATER!!!!!!!!
-//Place drawRow and drawColumn in the game class
-/*public static void draw(Board sos)
-{
-        
-        
-        for(int k=0;k<sos.rows;k++){
-                Board.drawRow(sos);
-        }
-
+public virtual Board GetComposite(){return 0;}
+public virtual Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
 }
-public static void drawRow(Board sos){
-    
-    for (int i=0;i<sos.Rows;i++)
-        {
-            Console.Write(sos.ColSymbols);
-            
-           for (int j=0;j<sos.Colums;j++)
-           {
-            
-            Console.Write(sos.RowSymbols);
-           }
-        }
-}*/
+
+class Columns : Board
+{
+//data fields
+//properties
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public virtual Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
+}
+
+class Rows : Board
+{
+//data fields
+//properties
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public virtual Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
+}
+
+class Cell : Rows
+{
+//data fields
+//properties
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public virtual Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
+}
+
+class Piece : Cell
+{
+//data fields
+protected char piece1, piece2;
+//properties
+public virtual char Piece1
+{
+    get;set;
+}
+public virtual char Piece2
+{
+    get;set;
+}
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public void Add(Board aboard)
+{
+   //check if piece is empty else 
+}
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
+}
+
+class SosPiece : Piece
+{
+//data fields
+protected char piece1 = 'X', piece2 = 'O';
+//properties
+public override char Piece1
+{
+    get{return piece1;}
+}
+public virtual char Piece2
+{
+    get{return piece1;}
+}
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public void Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
+}
+
+class ConnectFourPiece : Piece
+{
+//data fields
+protected char piece1 = 'O', piece2 = 'S';
+//properties
+public override char Piece1
+{
+    get{return piece1;}
+}
+public virtual char Piece2
+{
+    get{return piece1;}
+}
+//constructor
+//method
+public virtual Board GetComposite(){return this;}
+public void Add(Board aboard);
+public virtual Remove(Board aboard);
+public virtual Draw(Board aboard);
 }
