@@ -51,9 +51,9 @@ public Board(string boardName,int rows,int colums, string rowsymbols,string cols
 // fOR REVIEW LATER!!!!!!!!
 
 //Place drawRow and drawColumn in the game class
-    public static void SOSBoardArray(out char[] SosBoard)
+    public static void SOSBoardArray(out int[] SosBoard)
     {
-        SosBoard = new char[] {'1','2','3','4','5','6','7','8','9'};
+        SosBoard = new int[] {1,2,3,4,5,6,7,8,9};
     }
         public static void ConnectFourBoardArray(out int[] ConnectFourBoard)
     {

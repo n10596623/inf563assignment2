@@ -12,18 +12,19 @@ class program
         UserInterface.DecideGameToPlay();
         string a = Console.ReadLine();
 
-        Board.SOSBoardArray(out char[] sosboard);
+        Board.SOSBoardArray(out int[] sosboard);
         Board.ConnectFourBoardArray(out int[] connectFourBoard);
         selectGame(a,sosboard,connectFourBoard);
         UserInterface.DecideGameMode();
         UserInterface.Displayplayer1();
-        int player1 = int.Parse(Console.ReadLine());
-       
-        player1chose(player1);
+        string player1 = Console.ReadLine();
+        player1chose(player1, out string player1name);
+        Console.WriteLine(player1name);
         UserInterface.Displayplayer2();
-        int player2 = int.Parse(Console.ReadLine());
+        string player2 = Console.ReadLine();
         
-        player2chose(player2);
+        player2chose(player2,out string player2name);
+        Console.WriteLine(player2name);
         
         
 
@@ -48,60 +49,76 @@ class program
     //method to handle type casting of the different player subclass objects
     
     //public static void PlayerObjectCast() 
-    public static void player1chose(int c)
+    public static void player1chose(string c,out string player1name)
     {   
         
-        if (c ==1)
+        player1name=null;
+    while(c!="1"&&c!="2")
+    {
+        UserInterface.DisplayErrorInput(); 
+        UserInterface.Displayplayer1();
+        c = Console.ReadLine();
+    }
+        if (c == "1")
         {
             
             Game.CreateHumanPlayer1(out HumanPlayer humanPlayer1);
+            player1name = (humanPlayer1).HumanPlayerName;
+            
             
 
         }
-        else if (c == 2)
+        else if (c == "2")
         {
            
             Game.CreateComputerPlayer1(out ComputerPlayer computer1);
+            player1name = (computer1).ComputerPlayerName;
             
         }
-        else
-        {
-            Console.WriteLine("It is not valid! please enter 1 ot 2");
-        }
+
     }
-    public static void player2chose(int c)
+    public static void player2chose(string c, out string player2name)
     {   
-        if (c ==1)
+        player2name=null;
+    while(c!="1"&&c!="2")
+    {
+        UserInterface.DisplayErrorInput(); 
+        UserInterface.Displayplayer2();
+        c = Console.ReadLine();
+    }
+        if (c =="1")
         {
             Game.CreateHumanPlayer2(out HumanPlayer humanPlayer2);
+            player2name = (humanPlayer2).HumanPlayerName;
             
         }
-        else if (c == 2)
+        else if (c == "2")
         {
             Game.CreateComputerPlayer2(out ComputerPlayer computer2);
-            
+            player2name = (computer2).ComputerPlayerName;
         }
-        else
-        {
-            Console.WriteLine("It is not valid! please enter 1 ot 2");
-        }
+
     }
-    public static void selectGame(string a,char[] sosboard,int [] connectFourBoard)
+    public static void selectGame(string a,int[] sosboard,int [] connectFourBoard)
     {
-    while (a!="1" && a!="2"){     
-     
+    while (a!="1" && a!="2"){    
+
+    UserInterface.DisplayErrorInput();  
     UserInterface.DecideGameToPlay();
     a = Console.ReadLine();
     }
 
     if(a == "1")
     {
-    
+       UserInterface.SOSUserGuild();
        Game.drawSoS(sosboard);
+       Game.PlaySOS();
 
     }else if (a=="2")
     {
+       UserInterface.ConnectFourUserGuild();
        Game.drawConnectFour(connectFourBoard);
+       Game.PlayConnectFour();
     }
     
     

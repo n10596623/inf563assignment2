@@ -38,22 +38,26 @@ public class UserInterface
     }
     public static void Displayplayer1()
     {
-        Console.WriteLine("enter first player type:");
+        Console.WriteLine("Enter first player type:");
         
     }
     public static void Player1Name()
     {
-        Console.WriteLine("enter first player Name:");
+        Console.WriteLine("Enter first player Name:");
         
     }
         public static void Player2Name()
     {
-        Console.WriteLine("enter second player Name:");
+        Console.WriteLine("Enter second player Name:");
         
     }
     public static void Displayplayer2()
     {
-        Console.WriteLine("enter second player type:");
+        Console.WriteLine("Enter second player type:");
         
+    }
+    public static void DisplayErrorInput()
+    {
+        Console.WriteLine("It is not valid! please enter 1 ot 2");
     }
 }
