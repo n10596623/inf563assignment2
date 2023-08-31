@@ -7,7 +7,7 @@ abstract class Player
 //constructors 
 
 //abstract method to be inherited
-public abstract int playMove();
+// public abstract int playMove();
 
 }
  class ComputerPlayer : Player
@@ -24,19 +24,19 @@ public abstract int playMove();
      get;set;
     }
     //methods
-    public override int playMove()
-    {  
-      return ComputerPlayerMove;
-    }
+    // public override int playMove()
+    // {  
+    //   return ComputerPlayerMove;
+    // }
      //method that selects valid move for computer to play
-    public int SelectValidMove()
-    {
-        //we can discuss how the computer will find out which move is valid
-       Random rnd = new Random();
-       //max int will be decided later in Next() 
-       ComputerPlayerMove = rnd.Next();
-       return ComputerPlayerMove;
-    }
+    // public int SelectValidMove()
+    // {
+    //     //we can discuss how the computer will find out which move is valid
+    //    Random rnd = new Random();
+    //    //max int will be decided later in Next() 
+    //    ComputerPlayerMove = rnd.Next();
+    //    return ComputerPlayerMove;
+    // }
 
 }
  class HumanPlayer : Player
@@ -57,9 +57,9 @@ public abstract int playMove();
     //methods
 
     //overirde parent class method.
-     public override int playMove()
-    {
-    return HumanPlayerMove;
-    }
+    //  public override int playMove()
+    // {
+    // return HumanPlayerMove;
+    // }
 
 }

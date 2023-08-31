@@ -164,9 +164,26 @@ static void RedoMove()
 {
 
 }
-public static void PlaySOS()
+public static void PlaySOS(int[]sosboard,string player1name,int player1move,string player2name,int player2move)
 {
+    int[] player1save = new int[100];
+    int[] player2save = new int[100];
+for (int i =0;i<sosboard.Length;i++)
+{
+    UserInterface.Player1Input(player1name);
+    player1move= Convert.ToInt32(Console.ReadLine());
+    player1save.Append(player1move);
+    if (player1move==1&&player1move==2&&player1move==3&&player1move==4&&player1move==5&&player1move==6&&player1move==7&&player1move==8&&player1move==9)
+    {
 
+    }
+    UserInterface.Player2Input(player2name);
+    player2move= Convert.ToInt32(Console.ReadLine());
+    player2save.Append(player2move);
+    //Game.drawSoS();
+    i=i+2;
+    
+}
 }
 public static void PlayConnectFour()
 {

@@ -60,4 +60,16 @@ public class UserInterface
     {
         Console.WriteLine("It is not valid! please enter 1 ot 2");
     }
+        public static void PlayerGuild()
+    {
+        Console.WriteLine("enter numbers which are appeared in the table");
+    }
+            public static void Player1Input(string player1name)
+    {
+        Console.WriteLine("{0} Input:",player1name);
+    }
+            public static void Player2Input(string player2Name)
+    {
+        Console.WriteLine("{0} Input:",player2Name);
+    }
 }
