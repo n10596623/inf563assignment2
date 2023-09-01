@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Linq;
+using System.Xml;
 
 class Game
 {
@@ -110,22 +112,7 @@ public static void CreateComputerPlayer2(out ComputerPlayer computer2)
 
     
 }*/
-public static void drawSoS(int[] sosboard)
-{
- 
- 
- Console.WriteLine("        |         |        ");
- Console.WriteLine($"  {sosboard[0]}     |   {sosboard[1]}     |   {sosboard[2]}  ");
- Console.WriteLine("--------|---------|--------");
- Console.WriteLine("        |         |        ");
- Console.WriteLine($"  {sosboard[3]}     |   {sosboard[4]}     |   {sosboard[5]}  ");
- Console.WriteLine("--------|---------|--------");
- Console.WriteLine("        |         |        ");
- Console.WriteLine($"  {sosboard[6]}     |   {sosboard[7]}     |   {sosboard[8]}  ");
- Console.WriteLine("        |         |        ");
 
-//This is just the example for the board will be 
-}
 public static void drawConnectFour(int[] connectFourBoard)
 {
  
@@ -164,25 +151,110 @@ static void RedoMove()
 {
 
 }
-public static void PlaySOS(int[]sosboard,string player1name,int player1move,string player2name,int player2move)
+public static void PlaySOS(string[]sosboard,string player1name,int player1move,string player2name,int player2move)
 {
-    int[] player1save = new int[100];
-    int[] player2save = new int[100];
+    string[] player1save = new string[100];
+    string[] player2save = new string[100];
+    sosboard = new string[]{"1","2","3","4","5","6","7","8","9"};
+   
 for (int i =0;i<sosboard.Length;i++)
 {
+    for (int j=0; j < sosboard.Length;j++)
+    {
+    UserInterface.choose1SOS(player1name);
+    string SorO = Console.ReadLine();
+    while(SorO!="S"&&SorO!="O")
+    {
+    UserInterface.choose1SOS(player1name);
+    SorO = Console.ReadLine();
+    }
+    
     UserInterface.Player1Input(player1name);
-    player1move= Convert.ToInt32(Console.ReadLine());
-    player1save.Append(player1move);
+    bool a=int.TryParse(Console.ReadLine(), out player1move);
+    while(a==false || 0>player1move||player1move>9)
+    {
+      UserInterface.Player1Input(player1name);
+       a= int.TryParse(Console.ReadLine(), out player1move);  
+    }
+    
+
+
+    while(sosboard[player1move-1]=="S"||sosboard[player1move-1]=="O")
+        {
+               UserInterface.Player1Input(player1name);
+               a=int.TryParse(Console.ReadLine(), out player1move);
+               while(a==false || 0>player1move||player1move>9)
+                {
+                UserInterface.Player1Input(player1name);
+                a= int.TryParse(Console.ReadLine(), out player1move);  
+                }
+    
+        }    
+    string Player1MoveString = Convert.ToString(player1move);
+    
+
+    player1save[j] = Player1MoveString;
+    
+    if (player1save[i]==sosboard[player1move-1])
+    {
+        sosboard[player1move-1]= SorO;
+        
+    }
+    
     if (player1move==1&&player1move==2&&player1move==3&&player1move==4&&player1move==5&&player1move==6&&player1move==7&&player1move==8&&player1move==9)
     {
-
-    }
-    UserInterface.Player2Input(player2name);
-    player2move= Convert.ToInt32(Console.ReadLine());
-    player2save.Append(player2move);
-    //Game.drawSoS();
-    i=i+2;
+        
+    };
     
+    //sosboard=new string[]{"s","1","2","3","4","5","6","7","8"};
+    Board.drawSoS(sosboard);
+    
+    if(j==4)
+    {
+        break;
+    }
+    UserInterface.choose2SOS(player2name);
+    SorO = Console.ReadLine();
+    while(SorO!="S"&&SorO!="O")
+    {
+    UserInterface.choose2SOS(player2name);
+    SorO = Console.ReadLine();
+    }
+
+    UserInterface.Player2Input(player2name);
+    bool b=int.TryParse(Console.ReadLine(), out player2move);
+    while(b==false || 0>player2move||player2move>9)
+    {
+      UserInterface.Player2Input(player2name);
+       b= int.TryParse(Console.ReadLine(), out player2move);  
+    }
+    while(sosboard[player2move-1]=="S"||sosboard[player2move-1]=="O")
+    {
+        UserInterface.Player2Input(player2name);
+        a=int.TryParse(Console.ReadLine(), out player2move);
+        while(a==false || 0>player2move||player2move>9)
+        {
+        UserInterface.Player2Input(player2name);
+        a= int.TryParse(Console.ReadLine(), out player2move);  
+        }  
+    } 
+    string Player2MoveString = Convert.ToString(player2move);
+    
+
+    player2save[j] = Player2MoveString;
+    if (player2save[i]==sosboard[player2move-1])
+    {
+        sosboard[player2move-1]= SorO;
+    }
+    Board.drawSoS(sosboard);
+    //Game.drawSoS();
+    i=i+1;
+    
+}  
+if(i==4)
+{
+    break;
+}  
 }
 }
 public static void PlayConnectFour()

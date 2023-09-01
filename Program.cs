@@ -2,6 +2,7 @@
 using System.Data;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography.X509Certificates;
+using System.Linq;
 
 namespace ifn563_object;
 class program
@@ -24,7 +25,7 @@ class program
         //game board
         UserInterface.DecideGameToPlay();
         string a = Console.ReadLine();
-        Board.SOSBoardArray(out int[] sosboard);
+        Board.SOSBoardArray(out string[] sosboard);
         Board.ConnectFourBoardArray(out int[] connectFourBoard);
         selectGame(a,sosboard,connectFourBoard,player1name,player1move,player2name,player2move);
         
@@ -65,21 +66,15 @@ class program
     }
         if (c == "1")
         {
-            
             Game.CreateHumanPlayer1(out HumanPlayer humanPlayer1);
             player1name = (humanPlayer1).HumanPlayerName;
             player1move = (humanPlayer1).HumanPlayerMove;
-            
-            
-
         }
         else if (c == "2")
         {
-           
             Game.CreateComputerPlayer1(out ComputerPlayer computer1);
             player1name = (computer1).ComputerPlayerName;
-            player1move =(computer1).ComputerPlayerMove;
-            
+            player1move =(computer1).ComputerPlayerMove;        
         }
 
     }
@@ -108,7 +103,7 @@ class program
         }
 
     }
-    public static void selectGame(string a,int[] sosboard,int [] connectFourBoard,string player1name,int player1move,string player2name,int player2move)
+    public static void selectGame(string a,string[] sosboard,int [] connectFourBoard,string player1name,int player1move,string player2name,int player2move)
     {
     while (a!="1" && a!="2"){    
 
@@ -120,7 +115,7 @@ class program
     if(a == "1")
     {
        UserInterface.SOSUserGuild();
-       Game.drawSoS(sosboard);
+       Board.drawSoS(sosboard);
        Game.PlaySOS(sosboard,player1name,player1move,player2name,player2move);
 
     }else if (a=="2")

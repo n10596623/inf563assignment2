@@ -66,10 +66,18 @@ public class UserInterface
     }
             public static void Player1Input(string player1name)
     {
-        Console.WriteLine("{0} Input:",player1name);
+        Console.WriteLine("Player1 ({0}) Input:",player1name);
     }
             public static void Player2Input(string player2Name)
     {
-        Console.WriteLine("{0} Input:",player2Name);
+        Console.WriteLine("Player2 ({0}) Input:",player2Name);
+    }
+    public static void choose1SOS(string player1name)
+    {
+        Console.WriteLine("Player1 ({0}) enter S or O: ",player1name);
+    }
+    public static void choose2SOS(string player2name)
+    {
+        Console.WriteLine("Player2 ({0}) enter S or O: ",player2name);
     }
 }
