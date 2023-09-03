@@ -14,6 +14,7 @@ abstract class Player
 {
     //data fields
     private string computerPlayerName = "Computer";
+    private int computerPlayerMove;
     //properties
     public string ComputerPlayerName
     {
@@ -21,7 +22,8 @@ abstract class Player
     }
     public int ComputerPlayerMove
     {
-     get;set;
+     get{ return computerPlayerMove;}
+     set{computerPlayerMove = SelectValidMove();}
     }
     //methods
     // public override int playMove()
@@ -29,14 +31,14 @@ abstract class Player
     //   return ComputerPlayerMove;
     // }
      //method that selects valid move for computer to play
-    // public int SelectValidMove()
-    // {
-    //     //we can discuss how the computer will find out which move is valid
-    //    Random rnd = new Random();
-    //    //max int will be decided later in Next() 
-    //    ComputerPlayerMove = rnd.Next();
-    //    return ComputerPlayerMove;
-    // }
+    public int SelectValidMove()
+    {
+        //we can discuss how the computer will find out which move is valid
+       Random rnd = new Random();
+       //max int will be decided later in Next() 
+       int randomMove = rnd.Next();
+       return randomMove;
+    }
 
 }
  class HumanPlayer : Player

@@ -74,7 +74,10 @@ class program
         {
             Game.CreateComputerPlayer1(out ComputerPlayer computer1);
             player1name = (computer1).ComputerPlayerName;
-            player1move =(computer1).ComputerPlayerMove;        
+            player1move =(computer1).ComputerPlayerMove; 
+;
+            
+                 
         }
 
     }
