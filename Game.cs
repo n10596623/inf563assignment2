@@ -1,124 +1,73 @@
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+using System.Data;
+using System.Runtime;
 
-class Game
+public abstract class Game
 {
-    //data field
-private string gameType;
-    //propoties 
-public string GameType
-{
-    get;set;
-}
-    //constructure 
-public Game(){}
-/*public Game(string gameType){
-    gameType = GameType;
-}*/
-    //method 
-public static void SelectGame(int b)
-{
-    if(b == 1)
+    //declare abstract methods to be implemented by children
+    //We template method to achieve this
+
+    //declare variables
+    private int numberOfPlayers;
+    protected abstract void InitializeNewGame();
+    protected abstract void PlayMove(int player);
+    protected abstract bool EndOfGame();
+    protected abstract void ShowWinner();
+    //template method to be used by all our children classes
+    public void playGame(int numberOfPlayers)
     {
-        Console.WriteLine("SOS was selected");
-    }else
-    {
-        Console.WriteLine("Connect Four was select");
+        this.numberOfPlayers = numberOfPlayers;
+        InitializeNewGame();
+        int a = 0;
+        while(!EndOfGame())
+        {
+            PlayMove(a);
+            a = (a + 1) % numberOfPlayers; 
+        }
+        ShowWinner();
+
     }
 }
-public void CreateNewGame()
+
+public class SOSGame : Game
 {
-
-/*Console.WriteLine("Input game name: ");
-GameType = Console.ReadLine();
-while(GameType != "SOS" && GameType != "ConnectFour")
-{
-Console.WriteLine("Input game name: ");
-GameType = Console.ReadLine();
-}*/
-
-}
-public static void RetriveGameDetails()
-{
-
-}
-public static void DeletePlayer()
-{
-    
-}
-public static void CreateHumanPlayer(out HumanPlayer humanPlayer)
-{
-
-    humanPlayer = new HumanPlayer();
-
-}
-public static void CreateComputerPlayer(out ComputerPlayer computerPlayer)
-{
-
-    computerPlayer = new ComputerPlayer();
-
-}
-
-//Method that outputs    
-/*public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
-{
-    
-    if(c == 1)
+    protected override void InitializeNewGame()
     {
-        
-        //when Human Vs Human is selected we should initialize 2 HumanPlayer objects
-        
-         
-        Console.WriteLine("Computer Vs Human was selected");
-        CreateHumanPlayer(out firstPlayer);
-        CreateHumanPlayer(out secondPlayer);
-        
-    }else
-    {
-        //when Computer Vs Human is selected we should initialize 1 HumanPlayer object and 1 ComputerPlayer object
-        
-       
-        Console.WriteLine("Human Vs Human was select");
-        firstPlayer = new HumanPlayer();
-        secondPlayer = new ComputerPlayer();
+        //Even though our board class allows us to create specific sosboard size we decide to limit it to 3*3 for our implementation
+        IBoard sosboard = new SOSBoard(3,3);
+
     }
-    //decision will be made by user before creating appropriate player objects
+    protected override void PlayMove(int player)
+    {
 
-    
-}*/
-static void IsMoveValid()
-{
+    }
+    protected override bool EndOfGame()
+    {
+        // edit later!!!
+        return true;
+    }
+    protected override void ShowWinner()
+    {
 
-}
-static void SaveGame()
-{
-
-}
-static void LoadGame()
-{
-
-}
-static void UndoMove()
-{
-
-}
-static void RedoMove()
-{
-
-}
-static void Play()
-{
-
+    }
 }
 
-}
-
-class SosGame:Game
+public class ConnectFour : Game
 {
-    
-}
+    protected override void InitializeNewGame()
+    {
 
-class ConnectFour:Game 
-{
+    }
+    protected override void PlayMove(int player)
+    {
 
+    }
+    protected override bool EndOfGame()
+    {
+        //edit later
+        return false;
+    }
+    protected override void ShowWinner()
+    {
+        
+    }
 }

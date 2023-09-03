@@ -1,16 +1,21 @@
 using Microsoft.VisualBasic.FileIO;
 
-abstract class Player
+public interface IPlayer
 {
 //data field 
+
 //properties
+public bool PlayerTurn
+{
+    get;set;
+}
 //constructors 
 
 //abstract method to be inherited
 public abstract int playMove();
 
 }
- class ComputerPlayer : Player
+ class ComputerPlayer : IPlayer
 {
     //data fields
     private string computerPlayerName = "Computer";
@@ -23,8 +28,13 @@ public abstract int playMove();
     {
      get;set;
     }
+    public bool PlayerTurn
+    {
+    get;set;
+    }
+    
     //methods
-    public override int playMove()
+    public int playMove()
     {  
       return ComputerPlayerMove;
     }
@@ -36,7 +46,7 @@ public abstract int playMove();
     }
 
 }
- class HumanPlayer : Player
+ class HumanPlayer : IPlayer
 {
     //data fields
     private string HumanplayerName;
@@ -51,10 +61,14 @@ public abstract int playMove();
     {
     get; set;
     }
+    public bool PlayerTurn
+    {
+    get;set;
+    }
     //methods
 
     //overirde parent class method.
-     public override int playMove()
+    public int playMove()
     {
     return HumanPlayerMove;
     }

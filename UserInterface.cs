@@ -40,4 +40,9 @@ public class UserInterface
         Console.WriteLine("enter first player type:");
         
     }
+    public static void InvalidInput()
+    {
+        Console.WriteLine("INVALID INPUT!!!! Please enter input as intructed");
+        
+    }
 }

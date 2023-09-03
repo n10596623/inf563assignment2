@@ -45,7 +45,8 @@ public class Cell : IBoard
    //Overrides parent interface methods with its own implementation
     public void Display()
     {
-        Console.Write($"[{piece}]");
+        Console.Write($"[{piece}]\t");
+        
     }
 }
 
@@ -77,16 +78,19 @@ public class SOSBoard : IBoard
     //override inteface method
     public void Display()
     {
-        Console.WriteLine("SOS Game Board:");
-
+        Console.WriteLine("SOS Game Board:({0}*{1})", rows,cols);
+        Console.WriteLine("--------------------------------------------------------");
         for (int i = 0; i < rows; i++)
         {
+            
             for (int j = 0; j < cols; j++)
             {
                 board[i, j].Display();
             }
             Console.WriteLine();
+           
         }
+        Console.WriteLine("--------------------------------------------------------\n");
     }
 
    // method that takes row and column and places input in cell
@@ -130,6 +134,9 @@ public class ConnectFourBoard : IBoard
     //override interface method
     public void Display()
     {
+        Console.WriteLine("ConnectFour Board:({0}*{1})", rows,cols);
+        Console.WriteLine("--------------------------------------------------------");
+
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
@@ -138,6 +145,7 @@ public class ConnectFourBoard : IBoard
             }
             Console.WriteLine();
         }
+        Console.WriteLine("--------------------------------------------------------\n");
     }
 
     public void PlacePiece(int col, string pieceInput)
@@ -156,6 +164,8 @@ public class ConnectFourBoard : IBoard
                 return;
             }
         }
+        
+
 
         Console.WriteLine($"Column {col} is already full.");
     }
