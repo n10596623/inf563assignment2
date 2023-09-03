@@ -237,16 +237,14 @@ for (int i =0;i<sosboard.Length;i++)
     {
         break;
     }
-    UserInterface.choose2SOS(player2name);
-    SorO = Console.ReadLine();
-    while(SorO!="S"&&SorO!="O")
-    {
-    UserInterface.choose2SOS(player2name);
-    SorO = Console.ReadLine();
-    }
+
     if (player2name == "Computer")
-    {
+    {       
             Random rnd = new Random();
+            string[] test1 = new string[]{"S","O"};
+            int randomInt = rnd.Next(2);
+            SorO = test1[randomInt];
+            
            //max int will be decided later in Next() 
             player2move = rnd.Next(1,10);
             UserInterface.Player2Input(player2name);
@@ -258,6 +256,13 @@ for (int i =0;i<sosboard.Length;i++)
     
         }
     }else{
+    UserInterface.choose2SOS(player2name);
+    SorO = Console.ReadLine();
+    while(SorO!="S"&&SorO!="O")
+    {
+    UserInterface.choose2SOS(player2name);
+    SorO = Console.ReadLine();
+    }
     UserInterface.Player2Input(player2name);
     bool b=int.TryParse(Console.ReadLine(), out player2move);
     while(b==false || 0>player2move||player2move>9)
