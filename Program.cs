@@ -5,12 +5,18 @@ class program
 {
         public static void Main(string[] args)
     {
-        UserInterface.DisplayWelcomeMessage();
+
+        IBoard board= new SOSBoard(3,3);
+        IBoard board1= new ConnectFourBoard(7,6);
+        board.Display();
+        board1.Display();
+
+        /*UserInterface.DisplayWelcomeMessage();
         UserInterface.DecideGameToPlay();
         int a = int.Parse(Console.ReadLine());
         Game.SelectGame(a);
         UserInterface.DecideGameMode();
-        int b = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());*/
         
 
         

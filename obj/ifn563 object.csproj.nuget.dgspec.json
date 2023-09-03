@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj": {}
+    "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Raymond Repository\\inf563assignment2\\ifn563 object.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj": {
+    "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Raymond Repository\\inf563assignment2\\ifn563 object.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
+        "projectUniqueName": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Raymond Repository\\inf563assignment2\\ifn563 object.csproj",
         "projectName": "ifn563 object",
-        "projectPath": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\ifn563 object.csproj",
+        "projectPath": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Raymond Repository\\inf563assignment2\\ifn563 object.csproj",
         "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Group Code\\inf563assignment2\\obj\\",
+        "outputPath": "C:\\Users\\David\\OneDrive - Queensland University of Technology\\IFN563\\Raymond Repository\\inf563assignment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",

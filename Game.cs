@@ -12,9 +12,9 @@ public string GameType
 }
     //constructure 
 public Game(){}
-public Game(string gameType){
+/*public Game(string gameType){
     gameType = GameType;
-}
+}*/
     //method 
 public static void SelectGame(int b)
 {
@@ -60,7 +60,7 @@ public static void CreateComputerPlayer(out ComputerPlayer computerPlayer)
 }
 
 //Method that outputs    
-public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
+/*public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out Player secondPlayer)
 {
     
     if(c == 1)
@@ -85,7 +85,7 @@ public static void CreateGameModePlayers(int c,out HumanPlayer firstPlayer, out 
     //decision will be made by user before creating appropriate player objects
 
     
-}
+}*/
 static void IsMoveValid()
 {
 

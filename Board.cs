@@ -1,127 +1,162 @@
 
-class Board
+// Component interface
+public interface IBoard
 {
-//data field
-//properties
-public int NumberOfRows
-{
-    get;set;
-}
-public int NumberOfColmuns
-{
-    get;set;
-}
-//constructor
-public Board(int aNumberOfRows, int aNumberOfColumns)
-{
-    NumberOfColmuns = aNumberOfColumns;
-    NumberOfRows = aNumberOfRows;
-}
-//method
-public virtual Board GetComposite(){return 0;}
-public virtual Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
+    // The following methods will be used by all child class
+    void Display();
 }
 
-class Columns : Board
+// Leaf class (represents individual cells in the "SOS" an "Connectfour" game board)
+public class Cell : IBoard
 {
-//data fields
-//properties
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public virtual Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
+    //declare local variables
+    private int row;
+    private int col;
+    private string piece;
+
+    //constructor
+    public Cell(int row, int col)
+    {
+        this.row = row;
+        this.col = col;
+        piece = " "; // Initialize as empty
+    }
+
+    // methods
+    public string RetrievePiece()
+    {
+        return piece;
+    }
+
+    // method to input piece depending on the game being played
+    public void PlacePiece(string pieceInput)
+    {
+        //Check if cell is already occupied, if so return Error message
+        if (piece == " ")
+        {
+            piece = pieceInput;
+        }
+        else
+        {
+            Console.WriteLine($"INVALID MOVE!!!Cell [{row}, {col}] is already occupied.");
+        }
+    }
+
+   //Overrides parent interface methods with its own implementation
+    public void Display()
+    {
+        Console.Write($"[{piece}]");
+    }
 }
 
-class Rows : Board
+// Composite class (represents the "SOS" game board containing cells)
+public class SOSBoard : IBoard
 {
-//data fields
-//properties
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public virtual Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
+    //declare local variables
+    private Cell[,] board;
+    private int rows;
+    private int cols;
+    
+    //constructor
+    public SOSBoard(int rows, int cols)
+    {
+        this.rows = rows;
+        this.cols = cols;
+        board = new Cell[rows, cols];
+
+        // Initialize the board with empty cells
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                board[i, j] = new Cell(i, j);
+            }
+        }
+    }
+    
+    //override inteface method
+    public void Display()
+    {
+        Console.WriteLine("SOS Game Board:");
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                board[i, j].Display();
+            }
+            Console.WriteLine();
+        }
+    }
+
+   // method that takes row and column and places input in cell
+    public void PlacePiece(int row, int col, string pieceInput)
+    {
+        if (row < 0 || row >= rows || col < 0 || col >= cols)
+        {
+            Console.WriteLine($"Invalid row or column: [{row}, {col}]");
+            return;
+        }
+
+        board[row, col].PlacePiece(pieceInput);
+    }
 }
 
-class Cell : Rows
+// Composite class (represents the Connect Four game board containing cells)
+public class ConnectFourBoard : IBoard
 {
-//data fields
-//properties
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public virtual Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
-}
+    //declare local variables
+    private Cell[,] board;
+    private int rows;
+    private int cols;
+    
+    //constructor
+    public ConnectFourBoard(int rows, int cols)
+    {
+        this.rows = rows;
+        this.cols = cols;
+        board = new Cell[rows, cols];
 
-class Piece : Cell
-{
-//data fields
-protected char piece1, piece2;
-//properties
-public virtual char Piece1
-{
-    get;set;
-}
-public virtual char Piece2
-{
-    get;set;
-}
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public void Add(Board aboard)
-{
-   //check if piece is empty else 
-}
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
-}
+        // Initialize the board with empty cells
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                board[i, j] = new Cell(i, j);
+            }
+        }
+    }
 
-class SosPiece : Piece
-{
-//data fields
-protected char piece1 = 'X', piece2 = 'O';
-//properties
-public override char Piece1
-{
-    get{return piece1;}
-}
-public virtual char Piece2
-{
-    get{return piece1;}
-}
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public void Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
-}
+    //override interface method
+    public void Display()
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                board[i, j].Display();
+            }
+            Console.WriteLine();
+        }
+    }
 
-class ConnectFourPiece : Piece
-{
-//data fields
-protected char piece1 = 'O', piece2 = 'S';
-//properties
-public override char Piece1
-{
-    get{return piece1;}
-}
-public virtual char Piece2
-{
-    get{return piece1;}
-}
-//constructor
-//method
-public virtual Board GetComposite(){return this;}
-public void Add(Board aboard);
-public virtual Remove(Board aboard);
-public virtual Draw(Board aboard);
+    public void PlacePiece(int col, string pieceInput)
+    {
+        if (col < 0 || col >= cols)
+        {
+            Console.WriteLine($"Invalid column index: {col}");
+            return;
+        }
+
+        for (int i = rows - 1; i >= 0; i--)
+        {
+            if ( board[i, col].RetrievePiece() == " ")
+            {
+                board[i, col].PlacePiece(pieceInput);
+                return;
+            }
+        }
+
+        Console.WriteLine($"Column {col} is already full.");
+    }
 }
