@@ -13,7 +13,7 @@ public abstract class Game
     protected abstract bool EndOfGame();
     protected abstract void ShowWinner();
     //template method to be used by all our children classes
-    public void playGame(int numberOfPlayers)
+    public void PlayGame(int numberOfPlayers)
     {
         this.numberOfPlayers = numberOfPlayers;
         InitializeNewGame();
@@ -32,8 +32,11 @@ public class SOSGame : Game
 {
     protected override void InitializeNewGame()
     {
+        //inititialize board
         //Even though our board class allows us to create specific sosboard size we decide to limit it to 3*3 for our implementation
         IBoard sosboard = new SOSBoard(3,3);
+
+
 
     }
     protected override void PlayMove(int player)
@@ -55,7 +58,9 @@ public class ConnectFour : Game
 {
     protected override void InitializeNewGame()
     {
-
+        //inititialize board
+        //Even though our board class allows us to create specific sosboard size we decide to limit it to 7*6 for our implementation
+        IBoard connectFour = new ConnectFourBoard(7,6);
     }
     protected override void PlayMove(int player)
     {

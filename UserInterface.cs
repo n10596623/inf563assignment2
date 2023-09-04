@@ -13,9 +13,9 @@ public class UserInterface
 
     }
 
-    public static void DecideGameMode()
+    public static void DecidePlayerMode()
     {
-        Console.WriteLine(" Enter 1 for Computer VS Human. Enter 2 for Human Vs Human.");
+        Console.WriteLine("Enter 1 for Human Vs Human or Enter 2 for Computer VS Human.");
 
     }
     public static void SOSUserGuild()
