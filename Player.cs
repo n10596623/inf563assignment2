@@ -3,8 +3,26 @@ using Microsoft.VisualBasic.FileIO;
 public abstract class Player
 {
 //data field 
-
+protected string playerName, playerSymbol;
+protected int[] playerMoveHistory;
 //properties
+public virtual string PlayerName
+{
+    get;
+    set;
+}
+public string PlayerSymbol
+{
+    get{return playerSymbol;}
+    set{playerSymbol=value;}    
+}
+public int[] PlayerMoveHistory
+{ 
+    get { return playerMoveHistory; }
+    set { playerMoveHistory = value; }
+
+}
+
 public bool PlayerTurn
 {
     get;set;
@@ -12,35 +30,30 @@ public bool PlayerTurn
 //constructors 
 
 //abstract method to be inherited
-public abstract int PlayMove();
+
 
 }
  class ComputerPlayer : Player
 {
     //data fields
-    private string computerPlayerName = "Computer";
+    private  string playerName = "Computer";
     //properties
-    public string ComputerPlayerName
+    public override string PlayerName
     {
-    get { return computerPlayerName; }
+        get{return playerName;}
     }
+    
     public int ComputerPlayerMove
     {
      get;set;
     }
-    public bool PlayerTurn
-    {
-    get;set;
-    }
+    
     
     //methods
-    public override int PlayMove()
-    {  
-      return ComputerPlayerMove;
-    }
-     //method that selects valid move for computer to play
-    public int SelectValidMove()
+    //method that selects valid move for computer to play
+    public int SelectValidMove(int rows , int cols)
     {
+        
         //we can discuss how the computer will find out which move is valid
        return ComputerPlayerMove;
     }
@@ -49,28 +62,17 @@ public abstract int PlayMove();
  class HumanPlayer : Player
 {
     //data fields
-    private string HumanplayerName;
+    private string playerName;
 
     //properties
-    public string HumanPlayerName
+    public override string PlayerName
     {
-    get { return HumanplayerName; }
-    set { HumanplayerName = value; }
+      get{return playerName;}
+      set{playerName = value;}
     }
-    public int HumanPlayerMove
-    {
-    get; set;
-    }
-    public bool PlayerTurn
-    {
-    get;set;
-    }
+    
     //methods
 
     //overirde parent class method.
-    public override int PlayMove()
-    {
-    return HumanPlayerMove;
-    }
-
+    
 }

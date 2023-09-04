@@ -6,6 +6,7 @@ class program
 {
         public static void Main(string[] args)
     {
+        
         //declare variables
         string playerMode, gameType;
         int userInput;
@@ -23,41 +24,28 @@ class program
         PlayerMode(userInput, out playerMode);
         Console.WriteLine("{0}", playerMode);
 
+        int playerNumber = 2;
+        Game sosGame = new SOSGame();
+        sosGame.PlayGame(playerNumber, playerMode);
+
         //play selected game 
-        if(gameType == "SOS")
+        /*if(gameType == "SOS")
         {
             int playerNumber = 2;
             Game sosGame = new SOSGame();
-            sosGame.PlayGame(playerNumber);
+            sosGame.PlayGame(playerNumber, playerMode);
         }else if (gameType == "ConnectFour")
         {
             int playerNumber = 2;
             Game connectFourGame = new SOSGame();
-            connectFourGame.PlayGame(playerNumber);
+            //connectFourGame.PlayGame(playerNumber);
         }
 
         IBoard board1= new ConnectFourBoard(7,6);
     
-        board1.Display();
-
-        /*UserInterface.DisplayWelcomeMessage();
-        UserInterface.DecideGameToPlay();
-        int a = int.Parse(Console.ReadLine());
-        Game.SelectGame(a);
-        UserInterface.DecideGameMode();
-        int b = int.Parse(Console.ReadLine());*/
-        
+        board1.Display();*/
 
         
-        //Game.CreateNewPlayer(b, out  Player firstPlayer, out  Player secondPlayer);
-         //string v = ((Computerplayer)secondPlayer).ComputerPlayerName;
-         //Console.WriteLine(v);
-
-
-    
-        
-        // review how we draw the board
-        //Board.draw(sos);
         
     }
 

@@ -22,6 +22,8 @@ public class Cell : IBoard
         piece = " "; // Initialize as empty
     }
 
+  
+
     // methods
     public string RetrievePiece()
     {
@@ -57,7 +59,23 @@ public class SOSBoard : IBoard
     private Cell[,] board;
     private int rows;
     private int cols;
-    
+
+    //property
+
+    public Cell [,] Board
+    {
+        get { return board;}
+    }
+    public int Rows
+    {
+        get { return rows; }
+        set { rows = value; }
+    }
+    public int Cols
+    {
+        get { return cols; }
+        set { cols = value; }
+    }
     //constructor
     public SOSBoard(int rows, int cols)
     {

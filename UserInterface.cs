@@ -45,4 +45,14 @@ public class UserInterface
         Console.WriteLine("INVALID INPUT!!!! Please enter input as intructed");
         
     }
+    public static void RequestPlayerNameInput()
+    {
+        Console.WriteLine("Please enter player name:");
+        
+    }
+    public static void ShowPlayerTurn(Player player)
+    {
+        Console.WriteLine("{0} please play move ", player.PlayerName);
+        
+    }
 }
