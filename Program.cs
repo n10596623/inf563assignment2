@@ -24,9 +24,20 @@ class program
         PlayerMode(userInput, out playerMode);
         Console.WriteLine("{0}", playerMode);
 
-        int playerNumber = 2;
-        Game sosGame = new SOSGame();
-        sosGame.PlayGame(playerNumber, playerMode);
+        //play game according to selection
+        if(gameType == "SOS")
+        {
+            int playerNumber = 2;
+            Game sosGame = new SOSGame();
+            sosGame.PlayGame(playerNumber, playerMode);
+
+        }else if (gameType == "ConnectFour")
+        {
+            int playerNumber = 2;
+            Game connectFour = new ConnectFour();
+            connectFour.PlayGame(playerNumber,playerMode);
+        }
+        
 
         //play selected game 
         /*if(gameType == "SOS")

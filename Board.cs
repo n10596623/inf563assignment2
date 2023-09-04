@@ -131,6 +131,20 @@ public class ConnectFourBoard : IBoard
     private Cell[,] board;
     private int rows;
     private int cols;
+
+    //properties
+    public int Rows
+    {
+        get { return rows;}
+    }
+    public int Cols
+    {
+        get { return cols;}
+    }
+    public Cell [,] Board
+    {
+        get { return board;}
+    }
     
     //constructor
     public ConnectFourBoard(int rows, int cols)
