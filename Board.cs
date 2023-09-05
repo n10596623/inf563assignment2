@@ -132,6 +132,7 @@ public class ConnectFourBoard : IBoard
     private int rows;
     private int cols;
 
+
     //properties
     public int Rows
     {

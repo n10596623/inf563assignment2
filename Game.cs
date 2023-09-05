@@ -1,4 +1,5 @@
 using System.Data;
+using System.Diagnostics;
 using System.Runtime;
 
 public abstract class Game
@@ -14,6 +15,7 @@ public abstract class Game
     
     protected abstract bool EndOfGame();
     protected abstract void ShowWinner(Player player1, Player player2);
+    
     //template method to be used by all our children classes
     public void PlayGame(int numberOfPlayers, string playerMode)
     {
@@ -37,7 +39,9 @@ public class SOSGame : Game
     SOSBoard sosBoard = new SOSBoard(3,3);
     private int point = 0;
     private bool horizontal = true, vertical = true , leftToRight = true , rightToLeft = true;
-    protected override void InitializeNewGame(string playerMode, out Player player1, out Player player2)
+
+    
+    protected override void InitializeNewGame(string playerMode, out Player player1, out  Player player2)
     {
 
 
@@ -66,6 +70,7 @@ public class SOSGame : Game
 
 
     }
+
     protected override void PlayMove(int player, Player player1,Player player2)
     {
         //declare local variables
@@ -295,6 +300,8 @@ public class ConnectFour : Game
 {
     //We choose to initiate connectfour with 7*6
     ConnectFourBoard connectFourBoard = new ConnectFourBoard(7,6); 
+
+    
     protected override void InitializeNewGame(string playerMode, out Player player1, out Player player2)
     {
         //create appropriate player objects
@@ -302,6 +309,8 @@ public class ConnectFour : Game
          player1 = new HumanPlayer();
          UserInterface.RequestPlayerNameInput();
          player1.PlayerName = Console.ReadLine();
+
+         player1.PlayerSymbol = "X";
 
 
         //select second player according to playerMode
@@ -316,6 +325,7 @@ public class ConnectFour : Game
         {
          player2 = new ComputerPlayer();
         }
+        player2.PlayerSymbol = "O";
     }
     protected override void PlayMove(int player, Player player1, Player player2)
     {
@@ -332,8 +342,8 @@ public class ConnectFour : Game
         {
             currentPlayer = player2;
         }
-        //display previous board
-        connectFourBoard.Display();
+        
+
         
         //ask current player for input
         Console.WriteLine($"{currentPlayer.PlayerName}, it's your turn.");
@@ -352,50 +362,7 @@ public class ConnectFour : Game
             colInput = Console.ReadLine();
     
         }
-
-
-        
-
-        //check if selected cell is occupied
-        
-        while(connectFourBoard.Board[row,col].RetrievePiece() != " ")
-        {
-            //check next row if occupied
-            for (int i= connectFourBoard.Rows; i > 0; i--)
-            {
-                if(connectFourBoard.Board[row,col].RetrievePiece() == " ")
-                {
-                    //if empty the user can play piece
-
-
-
-                }
-            }
-            Console.WriteLine("Cell is occupied");
-            
-        
-
-            Console.Write("Enter column (0, 1, or 2): ");
-            col = int.Parse(Console.ReadLine());
-        }
- 
-        
-       
-
-        //ask for piece to play
-        Console.Write("Enter 'S' or 'O': ");
-        string piece = Console.ReadLine().ToUpper(); // Convert to uppercase for case-insensitive check
-        
-        //check if piece is valid for the game
-        while  (piece != "S" && piece != "O")
-        {
-            Console.WriteLine("Invalid symbol! Enter 'S' or 'O'.");
-            piece = Console.ReadLine().ToUpper();
-        }
-
-        
-    
-        connectFourBoard.PlacePiece(col, piece); 
+        connectFourBoard.PlacePiece(col,currentPlayer.PlayerSymbol);
         connectFourBoard.Display();
 
 
@@ -403,12 +370,30 @@ public class ConnectFour : Game
     }
     protected override bool EndOfGame()
     {
-        //edit later
-        return false;
+        for(int row=0;row<connectFourBoard.Rows;row++)
+        {
+            for(int col=0;col<connectFourBoard.Cols;col++)
+            {
+              //check if cell is empty return false so that game continues
+              if (connectFourBoard.Board[row,col].RetrievePiece() == " ")
+              {
+                return false;
+              }
+            }
+        }
+
+       
+        return true;
     }
     protected override void ShowWinner(Player player1, Player player2)
     {
-        // Check for horizontal SOS sequences
+        
 
+    }
+
+    protected bool WinningCondition()
+    {
+        //check if for pieces have been connected
+        return false;
     }
 }
