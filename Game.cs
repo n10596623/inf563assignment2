@@ -9,7 +9,7 @@ public abstract class Game
 
     //declare variables
     private int numberOfPlayers;
-    private Player player1, player2;
+    
     protected abstract void InitializeNewGame(string playerMode , out Player player1, out Player player2);
     protected abstract void PlayMove(int player, Player player1, Player player2);
     
