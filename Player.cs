@@ -29,10 +29,7 @@ public int[] PlayerMoveHistory
 
 }
 
-public bool PlayerTurn
-{
-    get;set;
-}
+
 //constructors 
 
 //abstract method to be inherited
