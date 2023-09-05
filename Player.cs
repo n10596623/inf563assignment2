@@ -5,6 +5,7 @@ public abstract class Player
 //data field 
 protected string playerName, playerSymbol;
 protected int[] playerMoveHistory;
+protected int playerPoint;
 //properties
 public virtual string PlayerName
 {
@@ -15,6 +16,11 @@ public string PlayerSymbol
 {
     get{return playerSymbol;}
     set{playerSymbol=value;}    
+}
+public int PlayerPoint
+{
+    get{return playerPoint;}
+    set{playerPoint=value;}    
 }
 public int[] PlayerMoveHistory
 { 

@@ -36,6 +36,7 @@ public class SOSGame : Game
     //data field
     SOSBoard sosBoard = new SOSBoard(3,3);
     private int point = 0;
+    private bool horizontal = true, vertical = true , leftToRight = true , rightToLeft = true;
     protected override void InitializeNewGame(string playerMode, out Player player1, out Player player2)
     {
 
@@ -121,10 +122,26 @@ public class SOSGame : Game
         {
             Console.WriteLine("Cell is occupied");
             Console.Write("Enter row (0, 1, or 2): ");
-            row = int.Parse(Console.ReadLine());
+            rowInput = Console.ReadLine();
+              //check if row input is integer 
+            while (!int.TryParse(rowInput,out row) || (row < 0 || row > 2))
+            {
+                Console.WriteLine("Invalid row selection! Try again.");
+                Console.Write("Enter row (0, 1, or 2): ");
+                rowInput = Console.ReadLine();
+    
+            }
 
             Console.Write("Enter column (0, 1, or 2): ");
-            col = int.Parse(Console.ReadLine());
+            colInput = Console.ReadLine();
+             //check if col input is integer and within range
+            while (!int.TryParse(colInput,out col)||(col < 0 || col > 2 ))
+            {
+                Console.WriteLine("Invalid column selection! Try again.");
+                Console.Write("Enter column (0, 1, or 2): ");
+                colInput = Console.ReadLine();
+    
+            }
         }
  
 
@@ -152,8 +169,19 @@ public class SOSGame : Game
     }
     protected override bool EndOfGame()
     {
-        // edit later!!!
-        return false;
+        for(int row=0;row<sosBoard.Rows;row++)
+        {
+            for(int col=0;col<sosBoard.Cols;col++)
+            {
+              //check if cell is empty return false so that game continues
+              if (sosBoard.Board[row,col].RetrievePiece() == " ")
+              {
+                return false;
+              }
+            }
+        }
+        
+        return true;
     }
     
     protected override void ShowWinner()
@@ -164,59 +192,78 @@ public class SOSGame : Game
     //method add point if SO connect
     public int AddPoint()
     {
-    // Check for horizontal SOS sequences
-    for (int row = 0; row < sosBoard.Rows; row++)
-    {
-        for (int col = 0; col < sosBoard.Cols - 2; col++)
+        
+        // Check for horizontal SOS sequences
+        if(horizontal)
         {
-            if (sosBoard.Board[row, col].RetrievePiece() == "S" && sosBoard.Board[row, col + 1].RetrievePiece() == "O" && sosBoard.Board[row, col + 2].RetrievePiece() == "S")
+            for (int row = 0; row < sosBoard.Rows; row++)
             {
-                return 1; // Horizontal SOS sequence found
+                for (int col = 0; col < sosBoard.Cols - 2; col++)
+                {
+                    if (sosBoard.Board[row, col].RetrievePiece() == "S" && sosBoard.Board[row, col + 1].RetrievePiece() == "O" && sosBoard.Board[row, col + 2].RetrievePiece() == "S")
+                    {
+                        horizontal = false;
+                        return 1; // Horizontal SOS sequence found
+                        
+                    }
+                }
             }
         }
-    }
 
-    // Check for vertical SOS sequences
-    for (int row = 0; row < sosBoard.Rows - 2; row++)
-    {
-        for (int col = 0; col < sosBoard.Cols; col++)
-        {
-            if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
-                sosBoard.Board[row + 1, col].RetrievePiece() == "O" &&
-                sosBoard.Board[row + 2, col].RetrievePiece() == "S")
-            {
-                return 1; // Vertical SOS sequence found
-            }
-        }
-    }
 
-    // Check for diagonal SOS sequences (top-left to bottom-right)
-    for (int row = 0; row < sosBoard.Rows - 2; row++)
-    {
-        for (int col = 0; col < sosBoard.Cols - 2; col++)
+        // Check for vertical SOS sequences
+        if(vertical)
         {
-            if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
-                sosBoard.Board[row + 1, col + 1].RetrievePiece()== "O" &&
-                sosBoard.Board[row + 2, col + 2].RetrievePiece() == "S")
+            for (int row = 0; row < sosBoard.Rows - 2; row++)
             {
-                return 1; // Diagonal SOS sequence found
+                for (int col = 0; col < sosBoard.Cols; col++)
+                {
+                    if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
+                        sosBoard.Board[row + 1, col].RetrievePiece() == "O" &&
+                        sosBoard.Board[row + 2, col].RetrievePiece() == "S")
+                    {
+                        vertical = false;
+                        return 1; // Vertical SOS sequence found
+                    }
+                }
             }
         }
-    }
 
-    // Check for diagonal SOS sequences (bottom-left to top-right)
-    for (int row = 2; row < sosBoard.Rows; row++)
-    {
-        for (int col = 0; col < sosBoard.Cols - 2; col++)
+        // Check for diagonal SOS sequences (top-left to bottom-right)
+        if(leftToRight)
         {
-            if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
-                sosBoard.Board[row - 1, col + 1].RetrievePiece() == "O" &&
-                sosBoard.Board[row - 2, col + 2].RetrievePiece() == "S")
+            for (int row = 0; row < sosBoard.Rows - 2; row++)
             {
-                return 1; // Diagonal SOS sequence found
+                for (int col = 0; col < sosBoard.Cols - 2; col++)
+                {
+                    if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
+                        sosBoard.Board[row + 1, col + 1].RetrievePiece()== "O" &&
+                        sosBoard.Board[row + 2, col + 2].RetrievePiece() == "S")
+                    {
+                        leftToRight = false;
+                        return 1; // Diagonal SOS sequence found
+                    }
+                }
             }
         }
-    }
+
+        // Check for diagonal SOS sequences (bottom-left to top-right)
+        if(rightToLeft)
+        {
+            for (int row = 2; row < sosBoard.Rows; row++)
+            {
+                for (int col = 0; col < sosBoard.Cols - 2; col++)
+                {
+                    if (sosBoard.Board[row, col].RetrievePiece() == "S" &&
+                        sosBoard.Board[row - 1, col + 1].RetrievePiece() == "O" &&
+                        sosBoard.Board[row - 2, col + 2].RetrievePiece() == "S")
+                    {
+                        rightToLeft = false;
+                        return 1; // Diagonal SOS sequence found
+                    }
+                }
+            }
+        }
 
         
 
@@ -305,7 +352,7 @@ public class ConnectFour : Game
                 }
             }
             Console.WriteLine("Cell is occupied");
-            Console.Write(row);
+            
         
 
             Console.Write("Enter column (0, 1, or 2): ");

@@ -35,11 +35,11 @@ public class UserInterface
         Console.WriteLine("enter the number as 1 3 which means raw 1 and colume 3");
         Console.WriteLine("****************************");
     }
-    public static void Displayplayer1()
-    {
-        Console.WriteLine("enter first player type:");
+    // public static void Displayplayer1()
+    // {
+    //     Console.WriteLine("enter first player type:");
         
-    }
+    // }
     public static void InvalidInput()
     {
         Console.WriteLine("INVALID INPUT!!!! Please enter input as intructed");
