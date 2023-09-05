@@ -13,6 +13,7 @@ class program
         
 
         //User selects either SOS game || Conectfour  as gameType
+        UserInterface.DisplayWelcomeMessage();
         UserInterface.DecideGameToPlay();
         userInput = IntUserInput();
         GameType(userInput, out gameType);
