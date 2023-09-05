@@ -161,11 +161,14 @@ public class SOSGame : Game
         
     
         sosBoard.PlacePiece(row, col, piece);
-        int win =AddPoint(); 
-        point += win;
+        //take current player point and add it previous currentplayer point
+
+        currentPlayer.PlayerPoint += AddPoint(); 
+        
+
         sosBoard.Display();
-        Console.WriteLine($"{player1.PlayerName} points are {/*add point property to player class*/point}");
-        Console.WriteLine($"{player2.PlayerName} points are {/*add point property to player class*/point}");
+        Console.WriteLine($"{currentPlayer.PlayerName} points are {currentPlayer.PlayerPoint}");
+        
     }
     protected override bool EndOfGame()
     {
