@@ -13,7 +13,7 @@ public abstract class Game
     protected abstract void PlayMove(int player, Player player1, Player player2);
     
     protected abstract bool EndOfGame();
-    protected abstract void ShowWinner();
+    protected abstract void ShowWinner(Player player1, Player player2);
     //template method to be used by all our children classes
     public void PlayGame(int numberOfPlayers, string playerMode)
     {
@@ -26,7 +26,7 @@ public abstract class Game
             
             a = (a + 1) % numberOfPlayers; 
         }
-        ShowWinner();
+        ShowWinner(player1,player2);
 
     }
 }
@@ -187,7 +187,7 @@ public class SOSGame : Game
         return true;
     }
     
-    protected override void ShowWinner()
+    protected override void ShowWinner(Player player1 , Player player2)
     {
        
     }
@@ -389,7 +389,7 @@ public class ConnectFour : Game
         //edit later
         return false;
     }
-    protected override void ShowWinner()
+    protected override void ShowWinner(Player player1, Player player2)
     {
         // Check for horizontal SOS sequences
 
