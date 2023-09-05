@@ -85,6 +85,12 @@ public class SOSGame : Game
             currentPlayer = player2;
         }
 
+        /*test if we can know its computer player
+        if(player2.GetType() == typeof(ComputerPlayer))
+        {
+            Console.WriteLine("PLAYER");
+        }*/
+
         //display previous board
         sosBoard.Display();
         

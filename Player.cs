@@ -36,6 +36,7 @@ public bool PlayerTurn
 //constructors 
 
 //abstract method to be inherited
+//public Player GetPlayer(){return this;}
 
 
 }
@@ -68,6 +69,7 @@ public bool PlayerTurn
     
     
     //methods
+    public Player GetPlayer(){return this;}
     //method that selects valid move for computer to play
     public void SelectValidMove(int boardRows , int boardCols)
     {
