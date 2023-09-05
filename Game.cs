@@ -38,6 +38,7 @@ public class SOSGame : Game
     //data field
     SOSBoard sosBoard = new SOSBoard(3,3);
     private int point = 0;
+   
     private bool horizontal = true, vertical = true , leftToRight = true , rightToLeft = true;
 
     
@@ -97,7 +98,9 @@ public class SOSGame : Game
         }*/
 
         //display previous board
+        UserInterface.SOSHelpGuide();
         sosBoard.Display();
+        
         
         //ask current player for input
         Console.WriteLine($"{currentPlayer.PlayerName}, it's your turn.");
@@ -343,7 +346,8 @@ public class ConnectFour : Game
             currentPlayer = player2;
         }
         
-
+        UserInterface.ConnectFourHelpGuide();
+        connectFourBoard.Display();
         
         //ask current player for input
         Console.WriteLine($"{currentPlayer.PlayerName}, it's your turn.");

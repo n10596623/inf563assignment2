@@ -18,23 +18,8 @@ public class UserInterface
         Console.WriteLine("Enter 1 for Human Vs Human or Enter 2 for Computer VS Human.");
 
     }
-    public static void SOSUserGuild()
-    {
-        Console.WriteLine("****************************");
-        Console.WriteLine("SOS is the 3x3 board game. ");
-        Console.WriteLine(" 'R' is redo, 'U' is Undo ");
-        Console.WriteLine("enter the number as 1 3 which means raw 1 and colume 3");
-        Console.WriteLine("****************************");
 
-    }
-    public static void ConnectFourUserGuild()
-    {
-        Console.WriteLine("****************************");
-        Console.WriteLine("ConnectFour is the 7x4 game.");
-        Console.WriteLine("'R' is redo, 'U' is undo");
-        Console.WriteLine("enter the number as 1 3 which means raw 1 and colume 3");
-        Console.WriteLine("****************************");
-    }
+
     // public static void Displayplayer1()
     // {
     //     Console.WriteLine("enter first player type:");
@@ -54,5 +39,24 @@ public class UserInterface
     {
         Console.WriteLine("{0} please play move ", player.PlayerName);
         
+    }
+    public static void SOSHelpGuide()
+    {
+        Console.WriteLine("*******************************");
+        Console.WriteLine("This is a typical 3x3 SOS Game;");
+        Console.WriteLine("Enter row number and column number will replace the space;");
+        Console.WriteLine("Each player can choose S or O to replace;");
+        Console.WriteLine("Who can line up SOS first who can get one point;");
+        Console.WriteLine("After all place be replaced, caculating the player points and decide who is winner");
+        Console.WriteLine("*******************************");    
+    }
+        public static void ConnectFourHelpGuide()
+    {
+        Console.WriteLine("*******************************");
+        Console.WriteLine("This is a typical 7x6 ConnectFour Game;");
+        Console.WriteLine("Enter column number will replace the space;");
+        Console.WriteLine("Player1 will use O and plyer2 will use X to replace the space");
+        Console.WriteLine("Who can line up 4 connection who can we the game;");
+        Console.WriteLine("*******************************");    
     }
 }
