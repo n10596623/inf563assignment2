@@ -43,7 +43,19 @@ public bool PlayerTurn
 {
     //data fields
     private  string playerName = "Computer";
+    private int row,col;
     //properties
+    public int Row
+    {
+        get { return row; }
+    
+    }
+
+    public int Col
+    {
+        get { return col; }
+    
+    }
     public override string PlayerName
     {
         get{return playerName;}
@@ -57,11 +69,15 @@ public bool PlayerTurn
     
     //methods
     //method that selects valid move for computer to play
-    public int SelectValidMove(int rows , int cols)
+    public void SelectValidMove(int boardRows , int boardCols)
     {
-        
-        //we can discuss how the computer will find out which move is valid
-       return ComputerPlayerMove;
+        //use random class method next to generate random value 
+        Random rnd = new Random();
+
+        //sets computerPlayer class data fields to random integers
+        row = rnd.Next(0, boardRows );
+        col = rnd.Next(0, boardCols);
+
     }
 
 }
