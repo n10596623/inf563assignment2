@@ -189,7 +189,18 @@ public class SOSGame : Game
     
     protected override void ShowWinner(Player player1 , Player player2)
     {
-       
+       if (player1.PlayerPoint>player2.PlayerPoint)
+       {
+        Console.WriteLine($"{player1.PlayerName} are the winner!");
+       }
+        else if (player2.PlayerPoint>player1.PlayerPoint)
+       {
+        Console.WriteLine($"{player2.PlayerName} are the winner!");
+       }
+        else if (player1.PlayerPoint==player2.PlayerPoint)
+        {
+            Console.WriteLine("The game is draw!!!");
+        }
     }
     
     //method add point if SO connect
